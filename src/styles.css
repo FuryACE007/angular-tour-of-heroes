@@ -40,7 +40,9 @@ button:disabled {
   color: #aaa;
   cursor: auto;
 }
-
+ul {
+  list-style-type: none;
+}
 /* everywhere else */
 * {
   font-family: Arial, Helvetica, sans-serif;
