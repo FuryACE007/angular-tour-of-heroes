@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import { HEROES } from '../mock-heroes';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
 
@@ -24,7 +23,7 @@ export class HeroesComponent implements OnInit {
   ) {}
 
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
+    this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes)); // observables can be considered as arrays, as they ca return multiple items, so, we are specifying that the heroes array is equal to the heroes returned by the observable waht we need to subscribe to
   }
 
   ngOnInit(): void {
