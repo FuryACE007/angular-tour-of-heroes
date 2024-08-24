@@ -12,15 +12,12 @@ export class HeroesComponent implements OnInit {
   selectedHero?: Hero;
   heroes: Hero[] = [];
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
+  // onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  //   this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  // }
 
-  constructor(
-    private heroService: HeroService,
-    private messageService: MessageService
-  ) {}
+  constructor(private heroService: HeroService) {}
 
   getHeroes(): void {
     this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes)); // observables can be considered as arrays, as they ca return multiple items, so, we are specifying that the heroes array is equal to the heroes returned by the observable waht we need to subscribe to
